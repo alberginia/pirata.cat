@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+
+{% block extra_js %}
+<script type="text/javascript" src="/media/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/media/js/jquery-ui-personalized-1.6rc6.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('HTML').addClass('JS');
+	
+	$("#tabs").tabs();
+	
+	var maxHeight=0;
+	$("#tabs div").each(function(){
+		var myDiv=$(this);
+		var isHidden=false;
+		if(myDiv.hasClass("ui-tabs-hide")){
+			isHidden=true;
+			myDiv.removeClass("ui-tabs-hide");
+		}
+		if((myHeight=myDiv.height())>maxHeight){
+			maxHeight=myHeight;	
+		}else{
+			myDiv.height(maxHeight);	
+		}
+		if(isHidden){
+			myDiv.addClass("ui-tabs-hide");
+		}
+	});
+	
+});
+</script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div id="content-zone" class="span-18">
+        <div class="outer">
+
+          <div class="inner">
+            <div class="span-4 comments clearfix">
+              <p></p>
+            </div>
+            <div class="span-14 last blog">
+              <div class="sub content">
+                <h2>{% block "title" %}{% endblock %}</h2>
+
+                <div class="blog-post">
+                    {% block "body" %}{% endblock %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% comment %}
+      <div id="sidebar" class="span-6 last content">
+        <div class="block rss">
+        <p class="clearfix">
+            <a href="#rss" title="Subscribe to the blog">Subscribe to the blog</a>
+            <a class="icon" href="#rss" title="Subscribe to the blog">
+                <img src="/media/img/pl_rss.png" alt="RSS" title="RSS" />
+            </a>
+        </p>
+        </div>
+        <div class="block search">
+          <form action="" method="post" class="clearfix">
+            <input type="text" />
+            <button>Search</button>
+          </form>
+
+        </div>
+        <div class="block categories">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="#announcements" title="Announcements">Announcements</a></li>
+            </ul>
+        </div>
+      </div>
+{% endcomment %}
+      
+    </div>
+{% endblock %}
