@@ -2,11 +2,15 @@ import os
 from django.conf import settings
 from django.conf.urls.defaults import *
 from django.contrib import admin
+from django.views.generic.simple import redirect_to
 from cms.sitemaps import CMSSitemap
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # (r'^partitpirata/', include('partitpirata.foo.urls')),
+    # hardcoded redirections, these go to external sites
+    url(r'^ca/bloc/$', redirect_to, { 'url': '/lalala' }),
+
     url(r'^contacte/', 'apps.contact.views.message_form'),
     url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),

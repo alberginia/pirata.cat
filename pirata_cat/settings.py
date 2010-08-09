@@ -130,6 +130,7 @@ CMS_TEMPLATES = (
     ('ideari.html', 'Ideari'),
     ('trobades.html', 'Trobades'),
     ('blog.html', 'En construccio'),
+    ('afiliacio.html', 'Afiliacio'),
     ('contact.html', 'Contacte'),
 #    ('cms.html', 'CMS'),
 )
