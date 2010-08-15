@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div id="content-zone" class="span-24">
+        <div class="span-12 col1">
+            <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+            <script>
+            new TWTR.Widget({
+              version: 2,
+              type: 'search',
+              search: '\"partit pirata\" OR @partit_pirata OR pirata.cat',
+              interval: 2000,
+              title: '',
+              subject: '',
+              width: 'auto',
+              height: 520,
+              theme: {
+                shell: {
+                  background: '#8ec1da',
+                  color: '#ffffff'
+                },
+                tweets: {
+                  background: '#ffffff',
+                  color: '#444444',
+                  links: '#1985b5'
+                }
+              },
+              features: {
+                scrollbar: true,
+                loop: false,
+                live: true,
+                hashtags: true,
+                timestamp: true,
+                avatars: true,
+                toptweets: true,
+                behavior: 'default'
+              }
+            }).render().start();
+            </script>
+        </div>
+
+        <div class="span-12 col2 last">
+
+            <iframe src="http://www.facebook.com/plugins/likebox.php?id=120062791066&amp;width=420&amp;connections=14&amp;stream=false&amp;header=false&amp;height=255" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:420px; height:255px; background-color:white;" allowTransparency="true"></iframe>
+
+            <br />    
+        
+            <script type="text/javascript" src="http://identi.ca/js/identica-badge.js">
+            {
+               "user":"partidopirata",
+               "server":"identi.ca",
+               "headerText":"",
+               "height": 255,
+               "width": 420,
+               "evenBackground":"true",
+               "userColor":"true",
+            }
+            </script>       
+        </div>
+        
+    </div>
+</div>
+                
+{% endblock %}
+

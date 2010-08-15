@@ -34,14 +34,15 @@ $(document).ready(function(){
 
 {% block content %}
     <div class="container">
-      <div id="content-zone" class="span-18">
+      <div id="content-zone" class="span-24">
+{% block "content-zone" %}      
         <div class="outer">
 
           <div class="inner">
             <div class="span-4 comments clearfix">
               <p></p>
             </div>
-            <div class="span-14 last blog">
+            <div class="span-19 last blog">
               <div class="sub content">
                 <h2>{% block "title" %}{% endblock %}</h2>
 
@@ -52,6 +53,7 @@ $(document).ready(function(){
             </div>
           </div>
         </div>
+{% endblock %}
       </div>
 
 {% comment %}
