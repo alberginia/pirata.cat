@@ -4,7 +4,7 @@ from apps.contact.models import Message
 
 
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'body', 'timestamp')
+    list_display = ('timestamp')
     list_filter = ('name', 'email', 'body', 'timestamp')
     ordering = ('-timestamp', )
     date_hierarchy = 'timestamp'
