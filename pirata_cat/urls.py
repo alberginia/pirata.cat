@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^ca/bloc/$', redirect_to, { 'url': '/lalala' }),
 
     url(r'^contacte/', 'apps.contact.views.message_form'),
+    url(r'^afiliacio/', 'apps.contact.views.interested_form'),
     url(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
