@@ -1,0 +1,33 @@
+{% extends 'base_cms.html' %}
+
+{% block "title" %}Afiliació{% endblock %}
+
+{% block "body" %}
+    {% if messages %}
+    <div style="display: block;" class="contact-messages content">
+        <div class="box error">
+            <ul class="no-margin">
+                {% for m in messages %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <hr>
+    {% endif %}
+    <p>L'afiliació no estarà disponible fins d'aqui a uns dies, doncs el partit s'està registrant ara mateix.</p>
+    <p>Els papers estan entregats al notari, estem esperant la resposta oficial.</p>
+    
+    {% if form %}
+    <p>Si vols que t'avisem de les novetats, omple el formulari:</p>
+    
+    <form method='post' id="sendEmail" action='./' class="horizontal">
+        {% csrf_token %}
+        {{ form.email.label }}:
+        {{ form.email }}
+        <button id="submit" type="submit" class="button" title="Enviar" style="display:inline"><span>Vull que m'informeu</span></button>
+    </form> 
+    {% endif %}    
+    
+{% endblock %}
+
