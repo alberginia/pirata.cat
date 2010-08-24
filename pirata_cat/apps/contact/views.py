@@ -9,8 +9,8 @@ def message_form(request, template_name="contact/message.html"):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            msg = 'Missatge rebut!'
-            request.user.message_set.create(message=msg)
+#            msg = 'Missatge rebut!'
+#            request.user.message_set.create(message=msg)
             return HttpResponseRedirect("/contacte")
 
     data = {
@@ -24,8 +24,8 @@ def interested_form(request, template_name="contact/afiliacio.html"):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            msg = 'Apuntat correctament!'
-            request.user.message_set.create(message=msg)
+#            msg = 'Apuntat correctament!'
+#            request.user.message_set.create(message=msg)
             return HttpResponseRedirect("/afiliacio")
 
     data = {
