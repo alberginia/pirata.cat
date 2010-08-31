@@ -9,7 +9,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # hardcoded redirections, these go to external sites
-    url(r'^ca/bloc/$', redirect_to, { 'url': '/lalala' }),
+#    url(r'^ca/bloc/$', redirect_to, { 'url': '/lalala' }),
+    url(r'^favicon.ico$', redirect_to, { 'url': '/media/img/favicon.ico' }),
 
     url(r'^contacte/', 'apps.contact.views.message_form'),
     url(r'^afiliacio/', 'apps.contact.views.interested_form'),
