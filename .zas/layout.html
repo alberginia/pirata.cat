@@ -15,7 +15,7 @@
 	<base href="{{.Site.BaseURL}}">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{{.Title}}</title>
+	<title>{{if not .IsHome}}{{.Title}} - {{end}}{{.Extra `site/name`}}</title>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
 	<meta property="og:title" content="{{.Title}}">
 	<meta property="og:type" content="website">
@@ -94,7 +94,7 @@
 	body { background-color: #FFFFFF; background-image: url('{{.Site.BaseURL}}/wp-content/uploads/background1.png'); background-repeat: no-repeat; background-position: top left; background-attachment: fixed; }
 	</style>
 </head>
-<body class="home page page-id-99 page-template page-template-sidebar-page-php single-author two-column right-sidebar">
+<body class="page {{if .IsHome}}home page-template page-template-sidebar-page-php{{else}}page-template-default singular{{end}} single-author two-column right-sidebar">
 {{.Body}}
 </body>
 </html>
