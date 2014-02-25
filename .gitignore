@@ -1,7 +1,1 @@
-production.json
-update_site.sh
-local_settings.py
-database.sqlite
-*.pyc
-*~
-
+.zas

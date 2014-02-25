@@ -1,5 +1,0 @@
-
-* Dependencies:
-    pip install django==1.2.1 django-cms==2.1.0.beta3 ipython docutils 
-
-
