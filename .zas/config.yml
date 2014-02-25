@@ -1,0 +1,9 @@
+mimetypes:
+  text/markdown: markdown
+site:
+  baseurl: http://pirata.cat
+  language: ca
+  name: Pirates de Catalunya
+zas:
+  deploy: .zas/deploy
+  layout: .zas/layout.html

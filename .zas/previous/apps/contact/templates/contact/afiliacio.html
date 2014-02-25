@@ -1,0 +1,33 @@
+{% extends 'base_cms.html' %}
+
+{% block "title" %}Afiliació{% endblock %}
+
+{% block "body" %}
+    {% if messages %}
+    <div style="display: block;" class="contact-messages content">
+        <div class="box error">
+            <ul class="no-margin">
+                {% for m in messages %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <hr>
+    {% endif %}
+    <p>El sistema d'afiliació estarà disponible tan bon punt es completi el tràmit d'inscripció en el Registre de Partits.</p>
+    <p>Els papers ja han estat tramitats i esperem la confirmació oficial en molt pocs dies.</p>
+    
+    {% if form %}
+    <p>Si voleu que us avisem de les novetats, ompliu el següent formulari:</p>
+    
+    <form method='post' id="sendEmail" action='./' class="horizontal">
+        {% csrf_token %}
+        {{ form.email.label }}:
+        {{ form.email }}
+        <button id="submit" type="submit" class="button" title="Enviar" style="display:inline"><span>Envieu-me informació!</span></button>
+    </form> 
+    {% endif %}    
+    
+{% endblock %}
+

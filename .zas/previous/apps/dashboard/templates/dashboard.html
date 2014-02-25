@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block extra_js %}
+<script type="text/javascript" src="/media/js/jquery-ui-personalized-1.6rc6.min.js"></script>
+<script type="text/javascript" src="/media/js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('HTML').addClass('JS');
+	$("#tabs").tabs();
+	//used to give all tabs the same height
+	var maxHeight=0;
+	$("#tabs div").each(function(){
+		var myDiv=$(this);
+		var isHidden=false;
+		if(myDiv.hasClass("ui-tabs-hide")){
+			isHidden=true;
+			myDiv.removeClass("ui-tabs-hide");
+		}
+		if((myHeight=myDiv.height())>maxHeight){
+			maxHeight=myHeight;	
+		}else{
+			myDiv.height(maxHeight);	
+		}
+		if(isHidden){
+			myDiv.addClass("ui-tabs-hide");
+		}
+	});
+	
+	$("#slide").cycle({
+		fx: 		'scrollDown',
+		timeout: 	'4000'
+	});
+});
+</script>
+{% endblock %}
+
+{% block content %}
+    <div class="span-12 col1">
+        <div id="tagline">
+          <h2>pirata.cat</h2>
+          <p>Partit Pirata de Catalunya</p>
+        </div>
+        
+        <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1"><span>Enllaços</span></a></li>
+            <li><a href="#tabs-2"><span>Qui som?</span></a></li>
+            <li><a href="#tabs-3"><span>Què volem?</span></a></li>
+            <li><a href="#tabs-4"><span>Arreu del món</span></a></li>
+            <li><a href="#tabs-5"><span>Xiu-xiu</span></a></li>
+        </ul>
+
+        <div id="tabs-1" class="features-block">
+        <ul class="feature-list">
+            {% include 'dashboard-links.html' %}
+        </ul>
+        </div>
+          
+        <div id="tabs-2">
+        <ul class="feature-list clearfix">
+            {% include 'dashboard-who.html' %}
+        </ul>
+        </div>
+          
+        <div id="tabs-3">
+        <ul class="feature-list clearfix">
+            {% include 'dashboard-what.html' %}
+        </ul>
+        </div>
+          
+        <div id="tabs-4">
+        <ul class="feature-list clearfix countries">
+            {% include 'pirate-countries.html' %}
+        </ul>
+        </div>
+        
+        <div id="tabs-5">
+        <ul class="feature-list clearfix">
+            {% include 'dashboard-xiuxiu.html' %}
+        </ul>
+        </div>
+    </div>
+
+    </div>
+    <div class="span-12 col2 last">
+        <div id="slide-wrapper">
+            <img src="/media/img/logo_partit_pirata.png"
+                alt="Logo del Partit Pirata"
+                title="Logo del Partit Pirata" />
+        </div>
+        <div id="cta" class="clearfix button-row">
+            <a href="https://xifrat.pirata.cat" class="button"><span>Hi vull participar!</span></a>
+            <a href="/afiliacio" class="button green-button last"><span>M'hi vull afiliar!</span></a>
+        </div>
+
+        <div id="testimonials">
+            <div class="testimonial">
+                <div class="inner">
+                    <cite>"Arrrrrrrrrrrrrrrrrrrr!"</cite>
+                </div>
+                <h6>Pirata anònim</h6>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
