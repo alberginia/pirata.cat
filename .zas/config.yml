@@ -1,5 +1,7 @@
 mimetypes:
   text/markdown: markdown
+  text/plain: plain
+  text/html: html
 site:
   baseurl: http://pirata.cat
   language: ca
