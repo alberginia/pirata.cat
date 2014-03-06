@@ -32,6 +32,7 @@
 	{{noescape `<![endif]-->`}}
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
 	</script>
+	{{if .IsHome}}
 	<script type="text/javascript" src="{{.Site.BaseURL}}/wp-content/themes/twentyeleven/js/rss.js">
 	</script>
 	<script type="text/javascript">
@@ -59,35 +60,9 @@
 		if (restore) selObj.selectedIndex=0;
 	}
 	</script>
-	<script type='text/javascript'>
-	/* <![CDATA[ */
-	window.CKEDITOR_BASEPATH = "{{.Site.BaseURL}}/wp-content/plugins/ckeditor-for-wordpress/ckeditor/";
-	var ckeditorSettings = { "textarea_id": "comment", "pluginPath": "http:\/\/pirata.cat\/web2011\/wp-content\/plugins\/ckeditor-for-wordpress\/", "autostart": true, "qtransEnabled": true, "outputFormat": { "indent": true, "breakBeforeOpen": true, "breakAfterOpen": false, "breakBeforeClose": false, "breakAfterClose": true }, "configuration": { "height": "120px", "skin": "kama", "scayt_autoStartup": false, "entities": true, "entities_greek": true, "entities_latin": true, "toolbar": "WordpressBasic", "templates_files": [ "http:\/\/pirata.cat\/web2011\/wp-content\/plugins\/ckeditor-for-wordpress\/ckeditor.templates.js" ], "stylesCombo_stylesSet": "wordpress:http:\/\/pirata.cat\/web2011\/wp-content\/plugins\/ckeditor-for-wordpress\/ckeditor.styles.js", "customConfig": "http:\/\/pirata.cat\/web2011\/wp-content\/plugins\/ckeditor-for-wordpress\/ckeditor.config.js" }, "externalPlugins": [  ], "additionalButtons": [  ] }
-	/* ]]> */
-	</script>
-	<style type="text/css">
-	#content table.cke_editor { margin:0; }
-	#content table.cke_editor tr td { padding:0;border:0; }
-	</style>
-	<script type='text/javascript' src='{{.Site.BaseURL}}/wp-includes/js/l10n.js?ver=20101110'>
-	</script>
-	<script type='text/javascript' src='{{.Site.BaseURL}}/wp-content/plugins/ckeditor-for-wordpress/ckeditor/ckeditor.js?ver=3.2.1'>
-	</script>
-	<script type='text/javascript' src='{{.Site.BaseURL}}/wp-includes/js/jquery/jquery.js?ver=1.6.1'>
-	</script>
-	<script type='text/javascript' src='{{.Site.BaseURL}}/wp-content/plugins/ckeditor-for-wordpress/includes/ckeditor.utils.js?ver=3.2.1'>
-	</script>
-	<link rel='next' title='Les 3 lleis pirates' href='{{.Site.BaseURL}}/les-3-lleis-pirates/'>
+	{{end}}
 	<link rel='canonical' href='{{.Site.BaseURL}}/'>
 	<meta http-equiv="Content-Language" content="{{.Language}}">
-	<style type="text/css" media="screen">
-	.qtrans_flag span { display:none }
-	.qtrans_flag { height:12px; width:18px; display:block }
-	.qtrans_flag_and_text { padding-left:20px }
-	.qtrans_flag_ca { background:url({{.Site.BaseURL}}/wp-content/plugins/qtranslate/flags/ca.alt.png) no-repeat }
-	.qtrans_flag_es { background:url({{.Site.BaseURL}}/wp-content/plugins/qtranslate/flags/es.png) no-repeat }
-	.qtrans_flag_en { background:url({{.Site.BaseURL}}/wp-content/plugins/qtranslate/flags/gb.png) no-repeat }
-	</style>
 	<link hreflang="es" href="{{.Site.BaseURL}}/es/" rel="alternate">
 	<link hreflang="en" href="{{.Site.BaseURL}}/en/" rel="alternate">
 	<style type="text/css">
@@ -109,7 +84,7 @@
 			</li>
 		</ul>
 		
-		<div class="menu-menu_prin-container"><ul id="menu-menu_prin" class="menu"><li id="menu-item-438" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-438"><a>Pirates</a>
+		<div class="menu-menu_prin-container"><ul id="menu-menu_prin" class="menu"><li id="menu-item-438" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-438"><a>{{.E `Pirates`}}</a>
 <ul class="sub-menu">
 	<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="http://pirata.cat/qui-som-pirates-de-catalunya/">Qui som Pirates de Catalunya?</a></li>
 	<li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a href="http://pirata.cat/les-3-lleis-pirates/">Les 3 lleis pirates</a></li>
@@ -217,7 +192,6 @@
 				<!--h2 >Canvia el sistema, vota&#039;t!</h2-->
 			</div>
 			</hgroup>
-<!-- barra sidebar 2 -->
 <div id="barra_sidebar_top" class="widget-area" role="complementary">
 	<aside id="text-18" class="widget widget_text">			<div class="textwidget"><div class="anuncis" style="text-align: center;padding: 0.5em 0; font-weight:bold;font-size:18px;">
 Descobeix <a style="color:#fff;" href="http://pirata.cat/1-2-3-4-pirata/">aquí</a> com participar en el partit.<hr style="color: #fff; background-color: #fff;margin: 0.3em 0;">Vols ajudar amb un donatiu? Fes-ho <u>(amb DNI)</u> <a style="color:#fff;" href="http://pirata.cat/donatius">aquí</a>. I consulta els nostres <a style="color:#fff;" href="http://pirata.cat/comptes">comptes</a>.
@@ -228,12 +202,8 @@ Descobeix <a style="color:#fff;" href="http://pirata.cat/1-2-3-4-pirata/">aquí<
 <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal. La forma rápida y segura de pagar en Internet.">
 <img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
 </form>
-<hr style="color: #fff; background-color: #fff;margin: 0.3em 0;">
-Tria què vols que portem al Parlament: <a href="http://pirata.cat/participa" style="color:#fff; font-weight: bold;">Participa aquí!</a>
-<!-- span style="color:#000; font-weight: bold;"><span style="color:#000; font-weight: bold;"><a href="http://pirata.cat/donatius" style="color:#fff;" >Crowdfunding</a> Hem aconseguit 16.284,84 de 18.560 €.</span> <a href="http://pirata.cat/donatius" style="color:#fff;">Ens ajudes?</a><div class="meter black"><span style="width: 87.74%"></span -->
 </div></div>
 		</aside></div>
-<!-- -->
 	</header><!-- #branding -->
 	<div id="main">
         <div id="primary">
