@@ -23,8 +23,8 @@
 	<meta property="og:image" content="http://lh5.googleusercontent.com/-zxasorjkLdc/AAAAAAAAAAI/AAAAAAAAABA/MKF4FLlgq9E/photo.jpg">
 	<meta property="og:site_name" content="{{.Extra "/site/name"}}">
 	<meta property="fb:app_id" content="139703722733025">
-	<meta name="description" content="Pirates de Catalunya &#195;&#169;s un partit pol&#195;&#173;tic horitzontal, amb pres&#195;&#168;ncia arreu del m&#195;&#179;n i que es presenta a les pr&#195;&#178;ximes eleccions catalanes del 25 de novembre.">
-	<meta name="keywords" content="pirates de catalunya, pirata.cat, catalunya, eleccions, generals, 20-N, 25-N, democr&#195;&nbsp;cia directa, democr&#195;&nbsp;cia participativa, internacional, pirate party, partit pirata, transparencia, govern obert, open government, software lliure, free software, free culture, cultura lliure"><!--Google plus-->
+	<meta name="description" content="{{.E `meta-description`}}">
+	<meta name="keywords" content="{{.E `meta-keywords`}}">
 	<link rel="canonical" href="https://plus.google.com/112149620641776669374">
 	<link rel="stylesheet" type="text/css" media="all" href="{{.Site.BaseURL}}/wp-content/themes/twentyeleven/style.css">
 	{{noescape `<!--[if lt IE 9]>`}}
@@ -63,8 +63,9 @@
 	{{end}}
 	<link rel='canonical' href='{{.Site.BaseURL}}/'>
 	<meta http-equiv="Content-Language" content="{{.Language}}">
-	<link hreflang="es" href="{{.Site.BaseURL}}/es/" rel="alternate">
-	<link hreflang="en" href="{{.Site.BaseURL}}/en/" rel="alternate">
+	{{if not (eq .Language `ca`)}}<link hreflang="ca" href="{{.Site.BaseURL}}/" rel="alternate">{{end}}
+	{{if not (eq .Language `es`)}}<link hreflang="es" href="{{.Site.BaseURL}}/es/" rel="alternate">{{end}}
+	{{if not (eq .Language `en`)}}<link hreflang="en" href="{{.Site.BaseURL}}/en/" rel="alternate">{{end}}
 	<style type="text/css">
 	body { background-color: #FFFFFF; background-image: url('{{.Site.BaseURL}}/wp-content/uploads/background1.png'); background-repeat: no-repeat; background-position: top left; background-attachment: fixed; }
 	</style>
@@ -72,98 +73,94 @@
 <body class="page {{if .IsHome}}home page-template page-template-sidebar-page-php{{else}}page-template-default singular{{end}} single-author two-column right-sidebar">
     <div id="menu">
 	<nav id="access" role="navigation">
-		<h3 class="assistive-text">Main menu</h3>
-				<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
-		<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
-		
-				
-		
+		<h3 class="assistive-text">{{.E `Menú principal`}}</h3>
+		<div class="skip-link"><a class="assistive-text" href="#content" title="{{.E `Salta al contingut`}}">{{.E `Salta al contingut`}}</a></div>
+		<div class="skip-link"><a class="assistive-text" href="#secondary" title="{{.E `Salta al contingut addicional`}}">{{.E `Salta al contingut addicional`}}</a></div>
 		<ul class="menu" style="margin-left: 0%;">
-			<li id="mini_logo" class="menu-item menu-item-type-post_type menu-item-object-custom">
-				<a href="http://pirata.cat/" style="font-weight: bold;" ><img id="logo_mini_menu_img" src="http://pirata.cat/wp-content/themes/twentyeleven/images/icono_menu.png" style="float:left; padding-top: 7px; padding-right: 6px;" >PIRATA.CAT</a>
+			<li id="mini_logo" class="menu-itemtype-post_typeobject-custom">
+				<a href="/{{.Language}}/" style="font-weight: bold;" ><img id="logo_mini_menu_img" src="http://pirata.cat/wp-content/themes/twentyeleven/images/icono_menu.png" style="float:left; padding-top: 7px; padding-right: 6px;" >PIRATA.CAT</a>
 			</li>
-		</ul>
-		
-		<div class="menu-menu_prin-container"><ul id="menu-menu_prin" class="menu"><li id="menu-item-438" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-438"><a>{{.E `Pirates`}}</a>
+		</ul>	
+		<div class="menu-menu_prin-container"><ul id="menu-menu_prin" class="menu"><li id="menu-item-438" class="menu-itemtype-customobject-custom"><a>{{.E `Pirates`}}</a>
+		<ul class="sub-menu">
+			<li id="menu-item-59" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/qui-som-pirates-de-catalunya/">{{.E `Qui som Pirates de Catalunya?`}}</a></li>
+			<li id="menu-item-117" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/les-3-lleis-pirates/">{{.E `Les tres lleis pirates`}}</a></li>
+			<li id="menu-item-62" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/ideari/">{{.E `Ideari`}}</a></li>
+			<li id="menu-item-902" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/junta/">{{.E `Junta`}}</a></li>
+			<li id="menu-item-1418" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/grups-de-treball/">{{.E `Grups de treball`}}</a></li>
+			<li id="menu-item-927" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/actes/">{{.E `Actes`}}</a></li>
+			<li id="menu-item-527" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/estatuts/">{{.E `Estatuts`}}</a></li>
+			<li id="menu-item-449" class="menu-itemtype-customobject-custom"><a>{{.E `Campanyes electorals`}}</a>
+				<ul class="sub-menu">
+					<li id="menu-item-448" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/campanyes-electorals/">{{.E `Llistat de campanyes`}}</a></li>
+					<li id="menu-item-1366" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/programa-de-les-eleccions-catalanes-25n-2012/">{{.E `Programa de les eleccions catalanes 25N 2012`}}</a></li>
+					<li id="menu-item-686" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/programa-generals-2011/">{{.E `Programa de les eleccions generals 2011`}}</a></li>
+					<li id="menu-item-601" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/candidats-generals-2011/">{{.E `Candidats a les eleccions generals 2011`}}</a></li>
+					<li id="menu-item-855" class="menu-itemtype-customobject-custom"><a href="https://xifrat.pirata.cat/commons/page/mapa-de-meses-electorals">{{.E `Mapa de meses electorals de les eleccions generals 2011`}}</a></li>
+					<li id="menu-item-211" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/resultats-municipals-2011/">{{.E `Resultats eleccions municipals 2011`}}</a></li>
+					<li id="menu-item-528" class="menu-itemtype-customobject-custom"><a href="https://xifrat.pirata.cat/commons/sites/default/files/programa_pla_2011.pdf">{{.E `Programa eleccions municipals 2011 (PDF)`}}</a></li>
+					<li id="menu-item-212" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/resultats-parlament-2010/">{{.E `Resultats eleccions parlament 2010`}}</a></li>
+				</ul>
+			</li>
+	<li id="menu-item-654" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/comptes/">{{.E `Comptes`}}</a></li>
+	<li id="menu-item-67" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/calendari/">{{.E `Calendari`}}</a></li>
+</ul>
+</li>
+<li id="menu-item-439" class="menu-itemtype-customobject-custom"><a>{{.E `Comunicació`}}</a>
 <ul class="sub-menu">
-	<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="http://pirata.cat/qui-som-pirates-de-catalunya/">Qui som Pirates de Catalunya?</a></li>
-	<li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a href="http://pirata.cat/les-3-lleis-pirates/">Les 3 lleis pirates</a></li>
-	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://pirata.cat/ideari/">Ideari</a></li>
-	<li id="menu-item-902" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-902"><a href="http://pirata.cat/junta/">Junta</a></li>
-	<li id="menu-item-1418" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1418"><a href="http://pirata.cat/grups-de-treball/">Grups de treball</a></li>
-	<li id="menu-item-927" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-927"><a href="http://pirata.cat/actes/">Actes</a></li>
-	<li id="menu-item-527" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-527"><a href="http://pirata.cat/estatuts/">Estatuts</a></li>
-	<li id="menu-item-449" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-449"><a>Campanyes electorals</a>
+	<li id="menu-item-11" class="menu-itemtype-customobject-custom"><a target="_blank" href="/{{.Language}}/bloc">{{.E `Bloc`}}</a></li>
+	<li id="menu-item-445" class="menu-itemtype-customobject-custom"><a>{{.E `Vídeos`}}</a>
 	<ul class="sub-menu">
-		<li id="menu-item-448" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-448"><a href="http://pirata.cat/campanyes-electorals/">Llistat de Campanyes</a></li>
-		<li id="menu-item-1366" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1366"><a href="http://pirata.cat/programa-de-les-eleccions-catalanes-25n-2012/">Programa de les Eleccions Catalanes 25N 2012</a></li>
-		<li id="menu-item-686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-686"><a href="http://pirata.cat/programa-generals-2011/">Programa de les Eleccions Generals 2011</a></li>
-		<li id="menu-item-601" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-601"><a href="http://pirata.cat/candidats-generals-2011/">Candidats a les Eleccions Generals 2011</a></li>
-		<li id="menu-item-855" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-855"><a href="https://xifrat.pirata.cat/commons/page/mapa-de-meses-electorals">Mapa de meses electorals de les Eleccions Generals 2011</a></li>
-		<li id="menu-item-211" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-211"><a href="http://pirata.cat/resultats-municipals-2011/">Resultats Eleccions Municipals 2011</a></li>
-		<li id="menu-item-528" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-528"><a href="https://xifrat.pirata.cat/commons/sites/default/files/programa_pla_2011.pdf">Programa Eleccions Municipals 2011 (PDF)</a></li>
-		<li id="menu-item-212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-212"><a href="http://pirata.cat/resultats-parlament-2010/">Resultats Eleccions Parlament 2010</a></li>
+		<li id="menu-item-22" class="menu-itemtype-customobject-custom"><a target="_blank" href="http://fap.pirata.cat/">{{.E `Festival d'Anuncis Pirata`}}</a></li>
+		<li id="menu-item-447" class="menu-itemtype-customobject-custom"><a target="_blank" href="http://www.youtube.com/user/PiratesdeCatalunyaTV">YouTube</a></li>
 	</ul>
 </li>
-	<li id="menu-item-654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-654"><a href="http://pirata.cat/comptes/">Comptes</a></li>
-	<li id="menu-item-67" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-67"><a href="http://pirata.cat/calendari/">Calendari</a></li>
-</ul>
-</li>
-<li id="menu-item-439" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-439"><a>Comunicació</a>
-<ul class="sub-menu">
-	<li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11"><a target="_blank" href="http://pirata.cat/bloc">Bloc</a></li>
-	<li id="menu-item-445" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-445"><a>Vídeos</a>
+	<li id="menu-item-55" class="menu-itemtype-customobject-custom"><a>{{.E `Xarxes socials`}}</a>
 	<ul class="sub-menu">
-		<li id="menu-item-22" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22"><a target="_blank" href="http://fap.pirata.cat/">Festival d&#8217;Anuncis Pirata</a></li>
-		<li id="menu-item-447" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-447"><a target="_blank" href="http://www.youtube.com/user/PiratesdeCatalunyaTV">YouTube</a></li>
+		<li id="menu-item-40" class="menu-itemtype-customobject-custom"><a target="_blank" href="http://www.facebook.com/pirata.cat">Facebook</a></li>
+		<li id="menu-item-706" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://plus.pirata.cat">Google+</a></li>
+		<li id="menu-item-340" class="menu-itemtype-customobject-custom"><a target="_blank" href="http://identi.ca/partitpirata">identi.ca</a></li>
+		<li id="menu-item-41" class="menu-itemtype-customobject-custom"><a target="_blank" href="http://twitter.com/#!/partit_pirata">Twitter</a></li>
 	</ul>
 </li>
-	<li id="menu-item-55" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-55"><a>Xarxes socials</a>
-	<ul class="sub-menu">
-		<li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40"><a target="_blank" href="http://www.facebook.com/pirata.cat">Facebook</a></li>
-		<li id="menu-item-706" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-706"><a target="_blank" href="https://plus.pirata.cat">Google+</a></li>
-		<li id="menu-item-340" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-340"><a target="_blank" href="http://identi.ca/partitpirata">identi.ca</a></li>
-		<li id="menu-item-41" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41"><a target="_blank" href="http://twitter.com/#!/partit_pirata">Twitter</a></li>
-	</ul>
-</li>
-	<li id="menu-item-24" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24"><a target="_blank" href="http://www.flickr.com/groups/piratacat/pool/with/5002516639/">Fotografies</a></li>
+	<li id="menu-item-24" class="menu-itemtype-customobject-custom"><a target="_blank" href="http://www.flickr.com/groups/piratacat/pool/with/5002516639/">{{.E `Fotografies`}}</a></li>
 </ul>
 </li>
-<li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21"><a target="_blank" href="https://xifrat.pirata.cat/alta_afiliats">Afilia&#8217;t</a></li>
-<li id="menu-item-440" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-440"><a>Activistes</a>
+<li id="menu-item-21" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/alta_afiliats">{{.E `Afilia't`}}</a></li>
+<li id="menu-item-440" class="menu-itemtype-customobject-custom"><a>{{.E `Activistes`}}</a>
 <ul class="sub-menu">
-	<li id="menu-item-1319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1319"><a href="http://pirata.cat/actua/">Actua!</a></li>
-	<li id="menu-item-163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-163"><a href="http://pirata.cat/donatius/">Donatius</a></li>
-	<li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a target="_blank" href="https://xifrat.pirata.cat/commons/wiki/material-de-campanya">Material de campanya</a></li>
-	<li id="menu-item-567" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-567"><a target="_blank" href="https://xifrat.pirata.cat/commons/node/325">Material de guerrilla / viral</a></li>
-	<li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"><a href="http://pirata.cat/1-2-3-4-pirata/">1, 2, 3, 4&#8230; pirata!</a></li>
-	<li id="menu-item-219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-219"><a href="http://pirata.cat/vine-a-les-reunions/">Vine a les reunions!</a></li>
+	<li id="menu-item-1319" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/actua/">{{.E `Actua!`}}</a></li>
+	<li id="menu-item-163" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/donatius/">{{.E `Donatius`}}</a></li>
+	<li id="menu-item-35" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/commons/wiki/material-de-campanya">{{.E `Material de campanya`}}</a></li>
+	<li id="menu-item-567" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/commons/node/325">{{.E `Material de guerrilla / viral`}}</a></li>
+	<li id="menu-item-91" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/1-2-3-4-pirata/">{{.E `1, 2, 3, 4... pirata!`}}</a></li>
+	<li id="menu-item-219" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/vine-a-les-reunions/"a>{{.E `Vine a les reunions!`}}</a></li>
 </ul>
 </li>
-<li id="menu-item-441" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-441"><a>Eines de treball</a>
+<li id="menu-item-441" class="menu-itemtype-customobject-custom"><a>Eines de treball</a>
 <ul class="sub-menu">
-	<li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://pirata.cat/ideatorrent/">Sistema de Participació Ciutadana (Ideatorrent)</a></li>
-	<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://pirata.cat/llistes-de-correu/">Llistes de correu</a></li>
-	<li id="menu-item-301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301"><a href="http://pirata.cat/forum/">Fòrum</a></li>
-	<li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98"><a href="http://pirata.cat/mumble/">Xat de veu (Mumble)</a></li>
-	<li id="menu-item-357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-357"><a href="http://pirata.cat/irc/">Xat (IRC)</a></li>
-	<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="http://pirata.cat/pads/">Edició de documents (Pads)</a></li>
-	<li id="menu-item-281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-281"><a href="http://pirata.cat/commons/">Repositori d&#8217;arxius (Commons)</a></li>
+	<li id="menu-item-90" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/ideatorrent/">Sistema de Participació Ciutadana (Ideatorrent)</a></li>
+	<li id="menu-item-73" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/llistes-de-correu/">Llistes de correu</a></li>
+	<li id="menu-item-301" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/forum/">Fòrum</a></li>
+	<li id="menu-item-98" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/mumble/">Xat de veu (Mumble)</a></li>
+	<li id="menu-item-357" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/irc/">Xat (IRC)</a></li>
+	<li id="menu-item-74" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/pads/">Edició de documents (Pads)</a></li>
+	<li id="menu-item-281" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/commons/">Repositori d&#8217;arxius (Commons)</a></li>
 </ul>
 </li>
-<li id="menu-item-442" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-442"><a>Contacte</a>
+<li id="menu-item-442" class="menu-itemtype-customobject-custom"><a>Contacte</a>
 <ul class="sub-menu">
-	<li id="menu-item-30" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-30"><a target="_blank" href="https://xifrat.pirata.cat/contacte">Formulari de contacte</a></li>
-	<li id="menu-item-171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-171"><a href="http://pirata.cat/on-trobar-nos/">On trobar-nos?</a></li>
+	<li id="menu-item-30" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/contacte">Formulari de contacte</a></li>
+	<li id="menu-item-171" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/on-trobar-nos/">On trobar-nos?</a></li>
 </ul>
 </li>
 </ul></div>		
 		
 		<ul class="menu" style="float: right; margin-right: 0%;">
-			<li class="menu-item menu-item-type-post_type menu-item-object-custom"><a href="#" >IDIOMA</a>
+			<li class="menu-itemtype-post_typeobject-custom"><a href="#" >IDIOMA</a>
 			<ul class="sub-menu" >
-				<li class="menu-item menu-item-type-custom menu-item-object-custom" ><a href="/ca/" >Català</a></li>
-				<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/es/" >Castellano</a></li>
+				<li class="menu-itemtype-customobject-custom" ><a href="/ca/" >Català</a></li>
+				<li class="menu-itemtype-customobject-custom"><a href="/es/" >Castellano</a></li>
 							</ul>
 			</li>
 		</ul>
