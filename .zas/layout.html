@@ -132,35 +132,36 @@
 	<li id="menu-item-1319" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/actua/">{{.E `Actua!`}}</a></li>
 	<li id="menu-item-163" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/donatius/">{{.E `Donatius`}}</a></li>
 	<li id="menu-item-35" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/commons/wiki/material-de-campanya">{{.E `Material de campanya`}}</a></li>
-	<li id="menu-item-567" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/commons/node/325">{{.E `Material de guerrilla / viral`}}</a></li>
+	<li id="menu-item-567" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/commons/node/325">{{.E `Material de guerrilla/viral`}}</a></li>
 	<li id="menu-item-91" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/1-2-3-4-pirata/">{{.E `1, 2, 3, 4... pirata!`}}</a></li>
 	<li id="menu-item-219" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/vine-a-les-reunions/"a>{{.E `Vine a les reunions!`}}</a></li>
 </ul>
 </li>
-<li id="menu-item-441" class="menu-itemtype-customobject-custom"><a>Eines de treball</a>
+<li id="menu-item-441" class="menu-itemtype-customobject-custom"><a>{{.E `Eines de treball`}}</a>
 <ul class="sub-menu">
-	<li id="menu-item-90" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/ideatorrent/">Sistema de Participació Ciutadana (Ideatorrent)</a></li>
-	<li id="menu-item-73" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/llistes-de-correu/">Llistes de correu</a></li>
-	<li id="menu-item-301" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/forum/">Fòrum</a></li>
-	<li id="menu-item-98" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/mumble/">Xat de veu (Mumble)</a></li>
-	<li id="menu-item-357" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/irc/">Xat (IRC)</a></li>
-	<li id="menu-item-74" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/pads/">Edició de documents (Pads)</a></li>
-	<li id="menu-item-281" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/commons/">Repositori d&#8217;arxius (Commons)</a></li>
+	<li id="menu-item-90" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/ideatorrent/">{{.E `Sistema de Participació Ciutadana`}}</a></li>
+	<li id="menu-item-73" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/llistes-de-correu/">{{.E `Llistes de correu`}}</a></li>
+	<li id="menu-item-301" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/forum/">{{.E `Fòrum`}}</a></li>
+	<li id="menu-item-98" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/mumble/">{{.E `Xat de veu (Mumble)`}}</a></li>
+	<li id="menu-item-357" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/irc/">{{.E `Xat (IRC)`}}</a></li>
+	<li id="menu-item-74" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/pads/">{{.E `Edició de documents (Pads)`}}</a></li>
+	<li id="menu-item-281" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/commons/">{{.E `Repositori d'arxius (Commons)`}}</a></li>
 </ul>
 </li>
-<li id="menu-item-442" class="menu-itemtype-customobject-custom"><a>Contacte</a>
+<li id="menu-item-442" class="menu-itemtype-customobject-custom"><a>{{.E `Contacte`}}</a>
 <ul class="sub-menu">
-	<li id="menu-item-30" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/contacte">Formulari de contacte</a></li>
-	<li id="menu-item-171" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/on-trobar-nos/">On trobar-nos?</a></li>
+	<li id="menu-item-30" class="menu-itemtype-customobject-custom"><a target="_blank" href="https://xifrat.pirata.cat/contacte">{{.E `Formulari de contacte`}}</a></li>
+	<li id="menu-item-171" class="menu-itemtype-post_typeobject-page"><a href="/{{.Language}}/on-trobar-nos/">{{.E `On trobar-nos?`}}</a></li>
 </ul>
 </li>
 </ul></div>		
 		
 		<ul class="menu" style="float: right; margin-right: 0%;">
-			<li class="menu-itemtype-post_typeobject-custom"><a href="#" >IDIOMA</a>
+			<li class="menu-itemtype-post_typeobject-custom"><a href="#" >{{.E `IDIOMA`}}</a>
 			<ul class="sub-menu" >
-				<li class="menu-itemtype-customobject-custom" ><a href="/ca/" >Català</a></li>
-				<li class="menu-itemtype-customobject-custom"><a href="/es/" >Castellano</a></li>
+				{{if not (eq .Language `ca`)}}<li class="menu-itemtype-customobject-custom" ><a href="/" >Català</a></li>{{end}}
+				{{if not (eq .Language `es`)}}<li class="menu-itemtype-customobject-custom"><a href="/es/" >Castellano</a></li>{{end}}
+				{{if not (eq .Language `en`)}}<li class="menu-itemtype-customobject-custom"><a href="/en/" >English</a></li>{{end}}
 							</ul>
 			</li>
 		</ul>
@@ -175,7 +176,7 @@
 			<div id="sidebar_head" style="position: absolute; top: 0; right: 1.6%; text-align: left;" >
 				<div id="secondary_head" class="widget-area" role="complementary">
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<a style=" text-align: left;" href="https://twitter.com/partit_pirata" class="twitter-follow-button" data-show-count="false" data-lang="ca">Segueix a @partit_pirata</a>&nbsp;<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpirata.cat&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=178224635584623" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+<a style=" text-align: left;" href="https://twitter.com/partit_pirata" class="twitter-follow-button" data-show-count="false" data-lang="{{.Language}}">{{.E `Segueix a @partit_pirata`}}</a>&nbsp;<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpirata.cat&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=178224635584623" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
 
 
 <aside id="text-13" class="widget widget_text">			<div class="textwidget"></div>
@@ -184,15 +185,11 @@
 			
 			<hgroup >
 			<div id="ultimes_noticies1" class="ultimes_noticies">
-				<!--img id="logo" src="http://pirata.cat/public/logo_horitzontal.png" style="height: 100%;width:auto;"--><!-- MU: modificacio en la imatge -->
 				<h1 id="logo_text">Pirates de Catalunya</h1>
-				<!--h2 >Canvia el sistema, vota&#039;t!</h2-->
 			</div>
 			</hgroup>
 <div id="barra_sidebar_top" class="widget-area" role="complementary">
-	<aside id="text-18" class="widget widget_text">			<div class="textwidget"><div class="anuncis" style="text-align: center;padding: 0.5em 0; font-weight:bold;font-size:18px;">
-Descobeix <a style="color:#fff;" href="http://pirata.cat/1-2-3-4-pirata/">aquí</a> com participar en el partit.<hr style="color: #fff; background-color: #fff;margin: 0.3em 0;">Vols ajudar amb un donatiu? Fes-ho <u>(amb DNI)</u> <a style="color:#fff;" href="http://pirata.cat/donatius">aquí</a>. I consulta els nostres <a style="color:#fff;" href="http://pirata.cat/comptes">comptes</a>.
-
+	<aside id="text-18" class="widget widget_text">			<div class="textwidget"><div class="anuncis" style="text-align: center;padding: 0.5em 0; font-weight:bold;font-size:18px;">{{.H `hero-howto`}}<hr style="color: #fff; background-color: #fff;margin: 0.3em 0;">{{.H `hero-donations`}}
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="PQZQ5P3G8X22Q">
@@ -220,90 +217,88 @@ Descobeix <a style="color:#fff;" href="http://pirata.cat/1-2-3-4-pirata/">aquí<
 <div id="supplementary" class="three">
 		<div id="first" class="widget-area" role="complementary">
 		<aside id="text-14" class="widget widget_text">			<div class="textwidget"><div class="sitemap" >
-<h3><a href="http://pirata.cat">
-Pirates de Catalunya</a></h3>
+<h3><a href="http://pirata.cat">Pirates de Catalunya</a></h3>
 </div></div>
 		</aside><aside id="text-6" class="widget widget_text">			<div class="textwidget"><div class="sitemap">
-<h3><a href="#">Pirates</a></h3>
+<h3><a href="#">{{.E `Pirates`}}</a></h3>
 <ul>
- <li><a href="/qui-som-pirates-de-catalunya" style="color: #ffffff;">Qui som Pirates de Catalunya?</a></li>
- <li><a href="/les-3-lleis-pirates" style="color: #ffffff;">Les 3 lleis pirates</a></li>
- <li><a href="/ideari" style="color: #ffffff;">Ideari</a></li>
- <li><a href="/estatuts" style="color: #ffffff;">Estatuts</a></li>
- <li><a href="/campanyes-electorals" style="color:#ffffff;">Llistat de Campanyes</a></li>
+ <li><a href="/qui-som-pirates-de-catalunya" style="color: #ffffff;">{{.E `Qui som Pirates de Catalunya?`}}</a></li>
+ <li><a href="/les-3-lleis-pirates" style="color: #ffffff;">{{.E `Les tres lleis pirates`}}</a></li>
+ <li><a href="/ideari" style="color: #ffffff;">{{.E `Ideari`}}</a></li>
+ <li><a href="/estatuts" style="color: #ffffff;">{{.E `Estatuts`}}</a></li>
+ <li><a href="/campanyes-electorals" style="color:#ffffff;">{{.E `Llistat de campanyes`}}</a></li>
  <li><a href="/programa-de-les-eleccions-catalanes-25n-2012" style="color:
-#ffffff;">Programa de les Eleccions Catalanes 25N 2012</a></li>
+#ffffff;">{{.E `Programa de les eleccions catalanes 25N 2012`}}</a></li>
  <li><a href="/programa-generals-2011" style="color:
-#ffffff;">Programa Eleccions Generals 2011</a></li>
+#ffffff;">{{.E `Programa de les eleccions generals 2011`}}</a></li>
  <li><a href="/candidats-generals-2011" style="color:
-#ffffff;">Candidats Eleccions Generals 2011</a></li>
+#ffffff;">{{.E `Candidats a les eleccions generals 2011`}}</a></li>
  <li><a href="https://xifrat.pirata.cat/commons/page/mapa-de-meses-electorals" style="color:
-#ffffff;">Mapa de meses electorals Eleccions Generals 2011</a></li>
+#ffffff;">{{.E `Mapa de meses electorals de les eleccions generals 2011`}}</a></li>
  <li><a href="/resultats-municipals-2011" style="color:
-#ffffff;">Resultats Eleccions Municipals 2011</a></li>
-<li><a href="https://xifrat.pirata.cat/commons/sites/default/files/programa_pla_2011.pdf" style="color: #ffffff;">Programa Eleccions Municipals 2011 (PDF)</a></li>
- <li><a href="/resultats-parlament-2010" style="color: #ffffff;">Resultats Eleccions Parlament 2010</a></li>
- <li><a href="/comptes" style="color: #ffffff;">Comptes</a></li>
- <li><a href="/calendari" style="color: #ffffff;">Calendari</a></li>
+#ffffff;">{{.E `Resultats eleccions municipals 2011`}}</a></li>
+<li><a href="https://xifrat.pirata.cat/commons/sites/default/files/programa_pla_2011.pdf" style="color: #ffffff;">{{.E `Programa eleccions municipals 2011 (PDF)`}}</a></li>
+ <li><a href="/resultats-parlament-2010" style="color: #ffffff;">{{.E `Resultats eleccions catalanes 2010`}}</a></li>
+ <li><a href="/comptes" style="color: #ffffff;">{{.E `Comptes`}}</a></li>
+ <li><a href="/calendari" style="color: #ffffff;">{{.E `Calendari`}}</a></li>
 </ul>
 </div></div>
 		</aside>	</div><!-- #first .widget-area -->
 	
 		<div id="second" class="widget-area" role="complementary">
 		<aside id="text-8" class="widget widget_text">			<div class="textwidget"><div class="sitemap" >
-<h3><a>Comunicació</a></h3>
+<h3><a>{{.E `Comunicació`}}</a></h3>
 <ul>
- <li><a href="http://pirata.cat/bloc/" style="color: #ffffff;" target="_blank">Bloc</a></li>
- <li><a href="http://fap.pirata.cat/" style="color: #ffffff;" target="_blank">Festival d’Anuncis Pirata</a></li>
+ <li><a href="http://pirata.cat/bloc/" style="color: #ffffff;" target="_blank">{{.E `Bloc`}}</a></li>
+ <li><a href="http://fap.pirata.cat/" style="color: #ffffff;" target="_blank">{{.E `Festival d'Anuncis Pirata`}}</a></li>
  <li><a href="http://www.youtube.com/user/PiratesdeCatalunyaTV" style="color: #ffffff;" target="_blank">YouTube</a></li>
  <li><a href="http://www.facebook.com/pirata.cat" style="color: #ffffff;" target="_blank">Facebook</a></li>
  <li><a href="https://plus.google.com/112149620641776669374" style="color: #ffffff;" target="_blank">Google+</a></li>
  <li><a href="http://identi.ca/partitpirata" style="color: #ffffff;" target="_blank">identi.ca</a></li>
  <li><a href="http://twitter.com/#!/partit_pirata" style="color: #ffffff;" target="_blank">Twitter</a></li>
- <li><a href="http://www.flickr.com/groups/piratacat/pool/with/5002516639/" style="color: #ffffff;" target="_blank">Fotografies</a></li>
+ <li><a href="http://www.flickr.com/groups/piratacat/pool/with/5002516639/" style="color: #ffffff;" target="_blank">{{.E `Fotografies`}}</a></li>
 </ul>
 </div></div>
 		</aside><aside id="text-11" class="widget widget_text">			<div class="textwidget"><div class="sitemap" >
-<h3><a>Activistes</a></h3>
+<h3><a>{{.E `Activistes`}}</a></h3>
 <ul>
- <li><a href="http://onze.pirates.cat/" style="color: #ffffff;">10+1 pirates</a></li>
- <li><a href="/actua" style="color: #ffffff;">Actua!</a></li>
- <li><a href="/donatius" style="color: #ffffff;">Donatius</a></li>
- <li><a href="https://xifrat.pirata.cat/commons/wiki/material-de-campanya" style="color: #ffffff;" target="_blank">Material de campanya</a></li>
- <li><a href="https://xifrat.pirata.cat/commons/node/325" style="color: #ffffff;" target="_blank">Material de guerrilla / viral</a></li>
- <li><a href="/1-2-3-4-pirata" style="color: #ffffff;">1, 2, 3, 4… pirata!</a></li>
- <li><a href="/vine-a-les-reunions" style="color: #ffffff;">Vine a les reunions!</a></li>
+ <li><a href="/actua" style="color: #ffffff;">{{.E `Actua!`}}</a></li>
+ <li><a href="/donatius" style="color: #ffffff;">{{.E `Donatius`}}</a></li>
+ <li><a href="https://xifrat.pirata.cat/commons/wiki/material-de-campanya" style="color: #ffffff;" target="_blank">{{.E `Material de campanya`}}</a></li>
+ <li><a href="https://xifrat.pirata.cat/commons/node/325" style="color: #ffffff;" target="_blank">{{.E `Material de guerrilla/viral`}}</a></li>
+ <li><a href="/1-2-3-4-pirata" style="color: #ffffff;">{{.E `1, 2, 3, 4... pirata!`}}</a></li>
+ <li><a href="/vine-a-les-reunions" style="color: #ffffff;">{{.E `Vine a les reunions!`}}</a></li>
 </ul>
 </div></div>
 		</aside>	</div><!-- #second .widget-area -->
 	
 		<div id="third" class="widget-area" role="complementary">
 		<aside id="text-9" class="widget widget_text">			<div class="textwidget"><div class="sitemap" >
-<h3><a href="https://xifrat.pirata.cat/alta_afiliats" target="_blank">Afilia't</a></h3>
+<h3><a href="https://xifrat.pirata.cat/alta_afiliats" target="_blank">{{.E `Afilia't`}}</a></h3>
 </div>
 </div>
 		</aside><aside id="text-2" class="widget widget_text">			<div class="textwidget"><div class="sitemap" >
-<h3><a>Eines de treball</a></h3>
+<h3><a>{{.E `Eines de treball`}}</a></h3>
 <ul>
- <li><a href="/ideatorrent" style="color: #ffffff;">Sistema de Participació Ciutadana (Ideatorrent)</a></li>
- <li><a href="/llistes-de-correu" style="color: #ffffff;">Llistes de correu</a></li>
- <li><a href="/forum" style="color: #ffffff;">Fòrum</a></li>
- <li><a href="/mumble" style="color: #ffffff;">Xat de veu (Mumble)</a></li>
- <li><a href="/irc" style="color: #ffffff;">Xat (IRC)</a></li>
- <li><a href="/pads" style="color: #ffffff;">Edició de documents (Pads)</a></li>
- <li><a href="/commons" style="color: #ffffff;">Repositori d’arxius (Commons)</a></li>
+ <li><a href="/ideatorrent" style="color: #ffffff;">{{.E `Sistema de Participació Ciutadana`}}</a></li>
+ <li><a href="/llistes-de-correu" style="color: #ffffff;">{{.E `Llistes de correu`}}</a></li>
+ <li><a href="/forum" style="color: #ffffff;">{{.E `Fòrum`}}</a></li>
+ <li><a href="/mumble" style="color: #ffffff;">{{.E `Xat de veu (Mumble)`}}</a></li>
+ <li><a href="/irc" style="color: #ffffff;">{{.E `Xat (IRC)`}}</a></li>
+ <li><a href="/pads" style="color: #ffffff;">{{.E `Edició de documents (Pads)`}}</a></li>
+ <li><a href="/commons" style="color: #ffffff;">{{.E `Repositori d'arxius (Commons)`}}</a></li>
 </ul>
 </div></div>
 		</aside><aside id="text-12" class="widget widget_text">			<div class="textwidget"><div class="sitemap" >
-<h3><a>Contacte</a></h3>
+<h3><a>{{.E `Contacte`}}</a></h3>
 <ul>
- <li><a href="https://xifrat.pirata.cat/contacte" style="color: #ffffff;" target="_blank">Formulari de contacte</a></li>
- <li><a href="/on-trobar-nos" style="color: #ffffff;">On trobar-nos?</a></li>
+ <li><a href="https://xifrat.pirata.cat/contacte" style="color: #ffffff;" target="_blank">{{.E `Formulari de contacte`}}</a></li>
+ <li><a href="/on-trobar-nos" style="color: #ffffff;">{{.E `On trobar-nos?`}}</a></li>
 </ul>
 </div></div>
 		</aside>	</div><!-- #third .widget-area -->
 	</div><!-- #supplementary -->    <div id="peu">
-	Pirates de Catalunya (PIRATA.CAT), 2010-2014 | <a href="https://xifrat.pirata.cat/pol_privacitat" target="_blank">Política de privadesa</a> - <a href="https://xifrat.pirata.cat/contacte" target="_blank">Contacte</a><br>
+	Pirates de Catalunya (PIRATA.CAT), 2010-2014 | <a href="https://xifrat.pirata.cat/pol_privacitat" target="_blank">{{.E `Política de privadesa`}}</a> - <a href="https://xifrat.pirata.cat/contacte" target="_blank">{{.E `Contacte`}}</a><br>
 	Contingut sota <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license"><img src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" style="border-width:0" alt="Llicència de Creative Commons"></a>
     </div>
 	</footer><!-- #colophon -->
