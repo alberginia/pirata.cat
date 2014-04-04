@@ -153,6 +153,10 @@ IDIOMA:
 Segueix a @partit_pirata:
   es: Sigue a @partit_pirata
   en: Follow @partit_pirata
+hero-sign:
+  ca: Necessitem 18.000 avals per presentar-nos. <a href="http://confederacionpirata.org/avales/">Ajuda'ns!</a>
+  es: Necesitamos 18.000 avales per presentarnos. <a href="http://confederacionpirata.org/avales/">¡Ayúdanos!</a>
+  en: We need 18.000 signatures to be able to run. <a href="http://confederacionpirata.org/avales/"></a>
 hero-howto:
   ca: Descobreix <a style="color:white;" href="/1-2-3-4-pirata/">aquí</a> com participar en el partit.
   es: Descubre <a style="color:white;" href="/es/1-2-3-4-pirata/">aquí</a> cómo participar en el partido.
